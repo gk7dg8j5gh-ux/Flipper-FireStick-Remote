@@ -1,0 +1,25 @@
+name: Build Flipper FAP
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build FAP
+        uses: flipperdevices/flipperzero-ufbt-action@v0.1
+        with:
+          sdk-channel: release
+
+      - name: Upload FAP
+        uses: actions/upload-artifact@v4
+        with:
+          name: fire-remote-fap
+          path: dist/*.fap
+          if-no-files-found: error
