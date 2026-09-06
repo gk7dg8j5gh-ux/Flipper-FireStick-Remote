@@ -119,7 +119,7 @@ int32_t fire_remote_app(void* p) {
 
     bt_disconnect(app->bt);
     furi_delay_ms(200);
-    bt_keys_storage_set_storage_path(app->bt, APP_DATA_PATH(FIRE_REMOTE_BT_KEYS));
+    bt_keys_storage_set_storage_path(app->bt, "/ext/apps_data/fire_remote/.bt_fire_remote.keys");
 
     static const BleProfileHidParams hid_params = {
         .device_name_prefix = "Fire",
