@@ -1,0 +1,11 @@
+App(
+    appid="fire_remote",
+    name="Fire Remote",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="fire_remote_app",
+    stack_size=4 * 1024,
+    fap_category="Bluetooth",
+    fap_description="Bluetooth HID remote for Amazon Fire TV / Fire Stick",
+    fap_version="0.1.0",
+    fap_libs=["ble_profile"],
+)
